@@ -1,0 +1,1 @@
+enum Menus { home, tools, education, skills, portfolio, contactus }
