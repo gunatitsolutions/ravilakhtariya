@@ -84,18 +84,18 @@ class Constants {
       projectType: 'IOS',
       portfolioList: [
         PortfolioModel(
-          title: 'Finance Calculator',
-          description:
-              'Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app',
-          image: '',
-          link: 'www.linkedin.com',
-        ),
-        PortfolioModel(
           title: 'Fuelo',
           description:
-              'Fuelo is an vehichel tracking app,Fuelo is an vehichel tracking app,Fuelo is an vehichel tracking app,Fuelo is an vehichel tracking app,Fuelo is an vehichel tracking app,',
+              'Fuelo is an vehicle tracking app, which helping to track your vehicle data, how many kilometers run, how many time services done, what is current average, how many money spent on vehicle etc. The image poster designed by me. Currently app is not available in appstore.',
+          image: AppImage.fueloIOS,
+          link: '',
+        ),
+        PortfolioModel(
+          title: 'Finance Calculator',
+          description:
+          'Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app',
           image: '',
-          link: 'www.linkedin.com',
+          link: '',
         ),
       ],
     ),
@@ -170,11 +170,11 @@ So, what are you waiting for, download the app and share your quote with the wor
       projectType: 'Graphic Design',
       portfolioList: [
         PortfolioModel(
-          title: 'Finance Calculator',
+          title: 'Darshan Gems',
           description:
-              'Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app',
-          image: '',
-          link: 'www.linkedin.com',
+              'Its client logo designed as client requirement. The logo is describe gems business in black background with golden color.',
+          image: AppImage.logoDesign,
+          link: '',
         ),
       ],
     ),
@@ -182,23 +182,11 @@ So, what are you waiting for, download the app and share your quote with the wor
       projectType: 'UI Design',
       portfolioList: [
         PortfolioModel(
-          title: 'Finance Calculator',
+          title: 'Metro App',
           description:
-              'Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app',
-          image: '',
-          link: 'www.linkedin.com',
-        ),
-      ],
-    ),
-    PortfoliosModel(
-      projectType: 'UI Design',
-      portfolioList: [
-        PortfolioModel(
-          title: 'Finance Calculator',
-          description:
-              'Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app',
-          image: '',
-          link: 'www.linkedin.com',
+              'Its offline metro app design for ios and flutter both platform. Currently app is not available in app store',
+          image: AppImage.metroUI,
+          link: '',
         ),
       ],
     ),
@@ -208,7 +196,7 @@ So, what are you waiting for, download the app and share your quote with the wor
         PortfolioModel(
           title: 'White Penicals',
           description:
-              'Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app Finance calculator is calculating a finance app',
+              'The image is of a group of pelican birds perched on a log. The birds are predominantly white and brown in color, and the photo was captured using a Canon 200D Mark2 camera.',
           image: AppImage.penicals,
           link: 'www.linkedin.com',
         ),

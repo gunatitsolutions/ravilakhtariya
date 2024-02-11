@@ -25,12 +25,6 @@ class DirectoryUtil {
                    appTempDirectoryPath = value.path;
                   SharedPrefs.writeValue(PrefConstants.tempPath,value.path);
                 });
-                await createSubDirectory('Images').then((value) {
-                  // tempDirectory = value;
-                  appTempDirectoryPath = value.path;
-                  SharedPrefs.writeValue(PrefConstants.imagePath,value.path);
-                });
-
               }
             });
           }
@@ -84,7 +78,9 @@ class DirectoryUtil {
         directory = directoryValue;
       });
     } else if (Platform.isWindows) {
-    } else {}
+    } else {
+      await WebDirectory.createFolder().then((value) => directory = value);
+    }
     return directory;
   }
 }
@@ -112,6 +108,13 @@ class AndroidDirectory {
 class IOSDirectory {
   static Future createFolder() async {
     Directory directoryValue = await getApplicationDocumentsDirectory();
+    return directoryValue;
+  }
+}
+
+class WebDirectory {
+  static Future createFolder() async {
+    Directory? directoryValue = await getDownloadsDirectory();
     return directoryValue;
   }
 }

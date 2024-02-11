@@ -7,6 +7,10 @@ class AppImage {
 
   static const financeCalculator = '$images/financeCalculator.jpeg';
   static const imagetopdfmaker = '$images/imagetopdfmaker.jpeg';
+  static const graphicDesign = '$images/graphic_design.jpeg';
+  static const fueloIOS = '$images/fueloiOSApp.jpeg';
+  static const metroUI = '$images/metroUI.jpeg';
+  static const logoDesign = '$images/logodesign.jpeg';
   static const connectivityFrameworkNotFound = '$images/connectivity_framwork_not_found.png';
   static const frameworkNotFound = '$images/fix_framework_not_found.png';
   static const penicals = '$images/penical.jpeg';

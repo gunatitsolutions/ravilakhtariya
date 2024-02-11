@@ -51,16 +51,10 @@ dependencies:
 
   flutter_svg: ^2.0.0
   cached_network_image: ^3.3.0
-  flutter_spinkit: ^5.2.0
   carousel_slider: ^4.2.1
 
-  country_picker: ^2.0.22
-
-  dropdown_search: ^5.0.6
   any_link_preview:
   font_awesome_flutter: ^10.7.0
-
-  github: ^9.2.0
 
   # web related
   flutter_html: any
@@ -69,12 +63,14 @@ dependencies:
 
   # utils
   mailto: ^2.0.0
-  flip_card: ^0.6.0
   animated_text_kit: ^4.2.2
   google_fonts: ^6.1.0
   intl:
   device_info_plus:
   responsive_sizer: ^3.3.0+1
+  mailer: ^6.1.0
+  file_saver: ^0.2.9
+
 
 
 dev_dependencies:

@@ -15,13 +15,14 @@ class AppNavigationBarDesktop extends AppNavigationBar {
         horizontal: 1.w,
       ),
       alignment: Alignment.center,
-      child: appTitle()/*Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           appTitle(),
+          resumeButton()
           //navigationMenus(),
         ],
-      )*/,
+      ),
     );
   }
 

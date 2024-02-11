@@ -16,8 +16,8 @@ class AppNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Responsive(
-        mobile: AppNavigationBarMobile(),
-        tablet: AppNavigationBarMobile(),
+        mobile: const AppNavigationBarMobile(),
+        tablet: const AppNavigationBarMobile(),
         desktop: AppNavigationBarDesktop());
   }
 
@@ -28,6 +28,30 @@ class AppNavigationBar extends StatelessWidget {
           fontSize: 20.sp,
           color: AppColors.whiteColor,
           fontWeight: FontWeight.w800),
+    );
+  }
+
+  resumeButton() {
+    return Padding(
+      padding: EdgeInsets.all(1.0.w),
+      child: ElevatedButton(
+          onPressed: () {
+            Get.find<HomeController>().downloadResumes();
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.transparent,
+            elevation: 1.0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(1.w),
+              side: const BorderSide(
+                color: AppColors.whiteColor,
+              ),
+            ),
+          ),
+          child: Text(
+            'Resume',
+            style: TextStyle(color: AppColors.whiteColor, fontSize: 12.sp,height: 1.2),
+          )),
     );
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ravilakhtariya/Constants/constants.dart';
 import 'package:ravilakhtariya/Screens/Home/Sections/ContactUs/Controllers/contact_us_controller.dart';
 import 'package:ravilakhtariya/Screens/Home/Sections/ContactUs/contact_us_section_desktop.dart';
 import 'package:ravilakhtariya/Screens/Home/Sections/ContactUs/contact_us_section_mobile.dart';
@@ -35,17 +36,31 @@ class ContactUsSection extends StatelessWidget {
       textEditingController: contactUsController.nameController,
       showHint: true,
       enableBorder: true,
+      validator: (value) {
+        if (value?.isEmpty ?? false) {
+          return 'Please enter name';
+        }
+        return null;
+      },
     );
   }
 
-  emailTextFieldWidget() {
+  /*emailTextFieldWidget() {
     return TextFieldWidget(
       title: 'Email',
       textEditingController: contactUsController.emailController,
       showHint: true,
       enableBorder: true,
+      validator: (value) {
+        if (value?.isEmpty ?? false) {
+          return 'Please enter email';
+        } else if (!RegexPatterns.emailRegex.hasMatch(value ?? '')) {
+          return 'Please enter valid email';
+        }
+        return null;
+      },
     );
-  }
+  }*/
 
   subjectTextFieldWidget() {
     return TextFieldWidget(
@@ -53,6 +68,12 @@ class ContactUsSection extends StatelessWidget {
       textEditingController: contactUsController.subjectController,
       showHint: true,
       enableBorder: true,
+      validator: (value) {
+        if (value?.isEmpty ?? false) {
+          return 'Please enter subject';
+        }
+        return null;
+      },
     );
   }
 
@@ -63,6 +84,12 @@ class ContactUsSection extends StatelessWidget {
       showHint: true,
       maxLines: 7,
       enableBorder: true,
+      validator: (value) {
+        if (value?.isEmpty ?? false) {
+          return 'Please enter message';
+        }
+        return null;
+      },
     );
   }
 
@@ -70,7 +97,11 @@ class ContactUsSection extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(2.0.w),
       child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            if(Get.find<ContactUsController>().checkValidation()) {
+              Get.find<ContactUsController>().sendMessageBtn();
+            }
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.colorPrimary,
             shape: RoundedRectangleBorder(

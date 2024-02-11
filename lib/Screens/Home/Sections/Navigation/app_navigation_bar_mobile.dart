@@ -11,6 +11,9 @@ class AppNavigationBarMobile extends AppNavigationBar {
       //leading: menuButton(),
       centerTitle: true,
       title: appTitle(),
+      actions: [
+        resumeButton()
+      ],
     );
   }
 }
