@@ -4,7 +4,6 @@ import 'package:ravilakhtariya/Screens/Home/Controllers/home_controller.dart';
 import 'package:ravilakhtariya/Screens/Home/Sections/Carouel/carousel_section.dart';
 import 'package:ravilakhtariya/Screens/Home/Sections/ContactUs/contact_us_section.dart';
 import 'package:ravilakhtariya/Screens/Home/Sections/Education/education_section.dart';
-import 'package:ravilakhtariya/Screens/Home/Sections/Navigation/Widget/app_drawer_widget.dart';
 import 'package:ravilakhtariya/Screens/Home/Sections/Navigation/app_navigation_bar.dart';
 import 'package:ravilakhtariya/Screens/Home/Sections/Portfolio/portfolio_section.dart';
 import 'package:ravilakhtariya/Screens/Home/Sections/Skills/skill_section.dart';
@@ -30,14 +29,14 @@ class HomeScreenState extends State<HomeScreen> {
         body: ListView(
           shrinkWrap: true,
           children: [
-            AppNavigationBar(),
-            CarouselSection(),
-            WorkSection(),
+            const AppNavigationBar(),
+            const CarouselSection(),
+            const WorkSection(),
             SizedBox(height: 1.h,),
-            EducationSection(),
-            PortfolioSection(),
-            SkillSection(),
-            VideoSection(),
+            const EducationSection(),
+            const PortfolioSection(),
+            const SkillSection(),
+            const VideoSection(),
             SizedBox(height: 2.h,),
             ContactUsSection(),
             SizedBox(height: 2.h,),

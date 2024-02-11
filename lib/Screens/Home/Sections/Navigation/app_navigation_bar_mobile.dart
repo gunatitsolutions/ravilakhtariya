@@ -8,7 +8,7 @@ class AppNavigationBarMobile extends AppNavigationBar {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: menuButton(),
+      //leading: menuButton(),
       centerTitle: true,
       title: appTitle(),
     );
