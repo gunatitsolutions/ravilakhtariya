@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ravilakhtariya/Screens/Splash/splash_controller.dart';
@@ -11,7 +12,9 @@ void main() async {
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
-  DirectoryUtil.createFolder();
+  if(!kIsWeb) {
+    DirectoryUtil.createFolder();
+  }
   Get.put(ThemeController());
   Get.put(SplashController());
   runApp(const PortfolioApp());
