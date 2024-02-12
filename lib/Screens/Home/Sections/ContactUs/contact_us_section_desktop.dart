@@ -15,29 +15,29 @@ class ContactUsSectionDesktop extends ContactUsSection {
     return Form(
       key: Get.find<ContactUsController>().formKey,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           titleWidget(),
+          SizedBox(
+            height: 1.h,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                constraints: BoxConstraints(
-                  minWidth: 40.w,
-                  maxWidth: 50.w
-                ),
+                constraints: BoxConstraints(minWidth: 40.w, maxWidth: 50.w),
                 alignment: Alignment.centerLeft,
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     nameTextFieldWidget(),
-                //    emailTextFieldWidget(),
+                    //    emailTextFieldWidget(),
                     subjectTextFieldWidget(),
                     messageTextFieldWidget(), sendMessageBtn()
                   ],
                 ),
               ),
-              Flexible(child: footerContactSectionMobile()),
+              Flexible(flex: 1,child: footerContactSectionMobile()),
             ],
           )
         ],

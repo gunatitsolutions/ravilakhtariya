@@ -15,20 +15,15 @@ class VideoItem extends StatelessWidget {
       onTap: () {
         LaunchCustomURL.launchURL(videoModel.videoLink);
       },
-      child: Container(
-        margin: EdgeInsets.symmetric(vertical: 1.h),
-        decoration: BoxDecoration(
-          color: AppColors.whiteColor,
-          boxShadow: [
-            BoxShadow(blurRadius: 1, color: AppColors.grayColor.shade500),
-          ],
-          borderRadius: BorderRadius.circular(0.5.w),
-        ),
+      child: Card(
+        color: AppColors.whiteColor,
+        margin: EdgeInsets.symmetric(vertical: 0.5.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image(
               image: AssetImage(videoModel.videoImageUrl),
+              fit: BoxFit.fitWidth,
             ),
             detailWidget(),
           ],
@@ -45,7 +40,7 @@ class VideoItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            height: 0.5.h,
+            height: 0.2.h,
           ),
           Text(
             videoModel.title,
@@ -56,7 +51,7 @@ class VideoItem extends StatelessWidget {
             maxLines: 3,
           ),
           SizedBox(
-            height: 0.3.h,
+            height: 0.2.h,
           ),
           Text(
             videoModel.shortDescription,
@@ -65,6 +60,7 @@ class VideoItem extends StatelessWidget {
                 fontWeight: FontWeight.w500,
                 color: AppColors.grayColor),
             maxLines: 5,
+            overflow: TextOverflow.clip,
           )
         ],
       ),

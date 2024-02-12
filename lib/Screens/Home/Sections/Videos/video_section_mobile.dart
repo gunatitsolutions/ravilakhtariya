@@ -21,6 +21,6 @@ class VideoSectionMobile extends VideoSection {
           },
         ),
       ],
-    );;
+    );
   }
 }

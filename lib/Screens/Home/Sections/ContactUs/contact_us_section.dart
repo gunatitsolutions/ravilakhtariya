@@ -95,7 +95,7 @@ class ContactUsSection extends StatelessWidget {
 
   sendMessageBtn() {
     return Padding(
-      padding: EdgeInsets.all(2.0.w),
+      padding: EdgeInsets.symmetric(vertical:2.0.w),
       child: ElevatedButton(
           onPressed: () {
             if(Get.find<ContactUsController>().checkValidation()) {
@@ -109,7 +109,7 @@ class ContactUsSection extends StatelessWidget {
             ),
           ),
           child: const Text(
-            'Send Message',
+            'Send',
             style: TextStyle(
               color: AppColors.whiteColor,
               fontWeight: FontWeight.w600,

@@ -16,6 +16,7 @@ class ContactUsSectionMobile extends ContactUsSection {
       child: Column(
         children: [
           titleWidget(),
+          SizedBox(height: 1.h,),
           nameTextFieldWidget(),
          // emailTextFieldWidget(),
           subjectTextFieldWidget(),

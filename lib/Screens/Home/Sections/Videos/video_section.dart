@@ -15,7 +15,7 @@ class VideoSection extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal:2.w),
       child: const Responsive(
           mobile: VideoSectionMobile(),
-          tablet: VideoSectionDesktop(),
+          tablet: VideoSectionMobile(),
           desktop: VideoSectionDesktop()),
     );
   }
