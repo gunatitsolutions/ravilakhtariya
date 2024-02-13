@@ -46,14 +46,7 @@ class PortfolioItem extends StatelessWidget {
                   SizedBox(
                     height: 1.h,
                   ),
-                  _urlLink(),
-                  SizedBox(
-                    height: 1.h,
-                  ),
-                  Wrap(
-                    alignment: WrapAlignment.start,
-                    children: [exploreButton(), nextAppButton()],
-                  )
+                  exploreButton()
                 ],
               )),
           !(showImageLeading ?? false)
@@ -103,40 +96,35 @@ class PortfolioItem extends StatelessWidget {
 
   Widget _urlLink() {
     if (portfolioModel.link.contains('https://play.google.com/')) {
-      return IconButton(
-          onPressed: () {
-            LaunchCustomURL.launchURL(portfolioModel.link);
-          },
-          icon: Icon(
-            FontAwesomeIcons.googlePlay,
-            size: 18.sp,
-          ));
-    } else if (portfolioModel.link.contains('https://www.instagram.com/')) {
-      return IconButton(
-          onPressed: () {
-            LaunchCustomURL.launchURL(portfolioModel.link);
-          },
-          icon: Icon(
-            FontAwesomeIcons.instagram,
-            size: 18.sp,
-          ));
-    } else if (portfolioModel.link.contains('https://gujarati.pratilipi.com/')) {
-      return InkWell(
-        onTap: (){
-          LaunchCustomURL.launchURL(portfolioModel.link);
-        },
-        child: Image(
-          image: const AssetImage(AppImage.pratilipi),
-          width: 18.sp,
-          height: 18.sp,
-        ),
+      return iconPaddingBtn(
+        iconData: FontAwesomeIcons.googlePlay,
       );
+    } else if (portfolioModel.link.contains('https://www.instagram.com/')) {
+      return iconPaddingBtn(
+        iconData: FontAwesomeIcons.instagram,
+      );
+    } else if (portfolioModel.link
+        .contains('https://gujarati.pratilipi.com/')) {
+      return iconPaddingBtn(image: AppImage.pratilipi);
     }
-    return Text(
-      portfolioModel.link,
-      style: GoogleFonts.oswald(fontWeight: FontWeight.normal, fontSize: 12.sp),
-      maxLines: 2,
-    );
+    return const SizedBox.shrink();
+  }
+
+  iconPaddingBtn({IconData? iconData, String? image}) {
+    return Padding(
+        padding: EdgeInsets.only(right: 1.0.w),
+        child: iconData != null
+            ? Icon(
+                iconData,
+                size: 15.sp,
+              )
+            : image != null
+                ? Image(
+                    image: AssetImage(image ?? ''),
+                    width: 15.sp,
+                    height: 15.sp,
+                  )
+                : const SizedBox.shrink());
   }
 
   Widget _description() {
@@ -155,48 +143,32 @@ class PortfolioItem extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(0.5.w),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          LaunchCustomURL.launchURL(portfolioModel.link);
+        },
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.colorPrimary,
+          backgroundColor: Colors.transparent,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(1.w),
-          ),
+              borderRadius: BorderRadius.circular(1.w),
+              side: const BorderSide(color: Colors.white)),
         ),
-        child: Text(
-          'EXPLORE MORE',
-          style: GoogleFonts.oswald(
-            fontSize: 13.sp,
-            fontWeight: FontWeight.w700,
-            color: AppColors.whiteColor,
-          ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            _urlLink(),
+            Text(
+              'EXPLORE',
+              style: GoogleFonts.oswald(
+                fontSize: 13.sp,
+                fontWeight: FontWeight.w700,
+                color: AppColors.whiteColor,
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
 
-  Widget nextAppButton() {
-    return Padding(
-      padding: EdgeInsets.all(0.5.w),
-      child: ElevatedButton(
-        onPressed: () {},
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.transparent,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(1.w),
-            side: const BorderSide(
-              color: AppColors.colorPrimary,
-            ),
-          ),
-        ),
-        child: Text(
-          'NEXT',
-          style: GoogleFonts.oswald(
-            fontSize: 13.sp,
-            fontWeight: FontWeight.w700,
-            color: AppColors.colorPrimary,
-          ),
-        ),
-      ),
-    );
-  }
 }

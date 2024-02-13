@@ -28,6 +28,7 @@ class HomeScreenState extends State<HomeScreen> {
         //drawer: AppDrawer(),
         body: ListView(
           shrinkWrap: true,
+          padding: EdgeInsets.all(2.w),
           children: [
             const AppNavigationBar(),
             const CarouselSection(),

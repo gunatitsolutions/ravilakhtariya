@@ -17,7 +17,7 @@ class VideoItem extends StatelessWidget {
       },
       child: Card(
         color: AppColors.whiteColor,
-        margin: EdgeInsets.symmetric(vertical: 0.5.h),
+        margin: EdgeInsets.symmetric(vertical: 1.0.h,horizontal: 1.0.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

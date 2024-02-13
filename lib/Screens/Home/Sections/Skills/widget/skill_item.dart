@@ -12,14 +12,14 @@ class SkillItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        vertical: 1.h,
+        vertical: 1.25.h,
       ),
       child: Row(
         children: [
           Expanded(
             flex: skillModel.percentage.w.toInt(),
             child: Container(
-              height: 5.h,
+              height: 4.h,
               color: AppColors.whiteColor,
               alignment: Alignment.centerLeft,
               padding: EdgeInsets.symmetric(
@@ -29,7 +29,7 @@ class SkillItem extends StatelessWidget {
                 skillModel.skill,
                 style: TextStyle(
                   color: AppColors.grayColor,
-                  fontSize: 14.sp,
+                  fontSize: 12.sp,
                 ),
               ),
             ),
