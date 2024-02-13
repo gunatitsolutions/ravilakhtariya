@@ -14,7 +14,7 @@
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
-  <base href="/">
+  <base href="/rv/">
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="A new portfolio project.">
@@ -35,10 +35,10 @@
     // The value below is injected by flutter build, do not touch.
     const serviceWorkerVersion = null;
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.15/plugins/export/libs/FileSaver.js/FileSaver.min.js"></script>
-
   <!-- This script adds the flutter initialization JS code -->
+  <script src="main.dart.js" type="application/javascript" defer></script>
   <script src="flutter.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.15/plugins/export/libs/FileSaver.js/FileSaver.min.js"></script>
 </head>
 <body>
   <script>
@@ -56,5 +56,6 @@
       });
     });
   </script>
+
 </body>
 </html>
