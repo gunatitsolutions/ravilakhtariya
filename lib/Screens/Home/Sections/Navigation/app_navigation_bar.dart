@@ -49,7 +49,7 @@ class AppNavigationBar extends StatelessWidget {
             ),
           ),
           child: Text(
-            'Resume',
+            'Download CV',
             style: TextStyle(color: AppColors.whiteColor, fontSize: 12.sp,height: 1.2),
           )),
     );

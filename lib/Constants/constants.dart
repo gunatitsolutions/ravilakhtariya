@@ -88,7 +88,7 @@ class Constants {
           description:
               'Fuelo is an vehicle tracking app, which helping to track your vehicle data, how many kilometers run, how many time services done, what is current average, how many money spent on vehicle etc. The image poster designed by me. Currently app is not available in appstore.',
           image: AppImage.fueloIOS,
-          link: '',
+          link: 'https://www.instagram.com/p/B5PcCkJAp-C/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
         ),
         PortfolioModel(
           title: 'Finance Calculator',
@@ -186,7 +186,7 @@ So, what are you waiting for, download the app and share your quote with the wor
           description:
               'Its offline metro app design for ios and flutter both platform. Currently app is not available in app store',
           image: AppImage.metroUI,
-          link: '',
+          link: 'https://www.instagram.com/p/CBu1aEYAtiD/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
         ),
       ],
     ),
@@ -198,7 +198,7 @@ So, what are you waiting for, download the app and share your quote with the wor
           description:
               'The image is of a group of pelican birds perched on a log. The birds are predominantly white and brown in color, and the photo was captured using a Canon 200D Mark2 camera.',
           image: AppImage.penicals,
-          link: 'www.linkedin.com',
+          link: 'https://www.instagram.com/p/C11MkokIXrd/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
         ),
       ],
     ),

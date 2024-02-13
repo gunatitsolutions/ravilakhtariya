@@ -10,7 +10,7 @@ class CarouselSectionMobile extends CarouselSection {
   Widget build(BuildContext context) {
     return Container(
       color: AppColors.blackColor,
-      height: 40.h,
+      height: 50.h,
       child: carouseInfoWidget(),
     );
   }

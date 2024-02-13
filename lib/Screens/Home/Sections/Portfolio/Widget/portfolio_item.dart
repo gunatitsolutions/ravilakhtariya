@@ -111,6 +111,26 @@ class PortfolioItem extends StatelessWidget {
             FontAwesomeIcons.googlePlay,
             size: 18.sp,
           ));
+    } else if (portfolioModel.link.contains('https://www.instagram.com/')) {
+      return IconButton(
+          onPressed: () {
+            LaunchCustomURL.launchURL(portfolioModel.link);
+          },
+          icon: Icon(
+            FontAwesomeIcons.instagram,
+            size: 18.sp,
+          ));
+    } else if (portfolioModel.link.contains('https://gujarati.pratilipi.com/')) {
+      return InkWell(
+        onTap: (){
+          LaunchCustomURL.launchURL(portfolioModel.link);
+        },
+        child: Image(
+          image: const AssetImage(AppImage.pratilipi),
+          width: 18.sp,
+          height: 18.sp,
+        ),
+      );
     }
     return Text(
       portfolioModel.link,

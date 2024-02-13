@@ -10,7 +10,7 @@ class CarouselSectionDesktop extends CarouselSection {
   Widget build(BuildContext context) {
     return Container(
       color: AppColors.blackColor,
-      height: 80.h,
+      height: 70.h,
       child: carouseInfoWidget(),
     );
   }

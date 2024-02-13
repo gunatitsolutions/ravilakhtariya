@@ -4,7 +4,7 @@ class AppImage {
   static const images = 'assets/images';
   static const raviLakhtariya = '$images/ravilakhtariya.png';
   static const splash = '$assets/splash.png';
-
+  static const pratilipi = '$images/pratilipi.png';
   static const financeCalculator = '$images/financeCalculator.jpeg';
   static const imagetopdfmaker = '$images/imagetopdfmaker.jpeg';
   static const graphicDesign = '$images/graphic_design.jpeg';
