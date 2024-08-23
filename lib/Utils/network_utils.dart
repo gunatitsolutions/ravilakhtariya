@@ -7,9 +7,7 @@ class NetworkUtils {
     final connectivityResult = await (Connectivity().checkConnectivity());
     switch (connectivityResult) {
       case ConnectivityResult.mobile:
-        return true;
       case ConnectivityResult.ethernet:
-        return true;
       case ConnectivityResult.wifi:
         return true;
       default:

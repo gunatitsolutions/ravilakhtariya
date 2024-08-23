@@ -17,7 +17,7 @@ class CustomTextButton extends StatelessWidget {
     this.customIcon,
     this.backgroundColor,
     this.clip,
-    this.size
+    this.size,
   });
 
   @override
@@ -25,18 +25,17 @@ class CustomTextButton extends StatelessWidget {
     return (customIcon != null)
         ? const CustomIconTextButton()
         : TextButton(
-      onPressed: onTap,
-      style: TextButton.styleFrom(
-        backgroundColor: backgroundColor ?? AppColors.bgColor,
-      ),
-      clipBehavior: clip ?? Clip.none,
-      child: customText ?? const SizedBox(),
-    );
+            onPressed: onTap,
+            style: TextButton.styleFrom(
+              backgroundColor: backgroundColor ?? AppColors.bgColor,
+            ),
+            clipBehavior: clip ?? Clip.none,
+            child: customText ?? const SizedBox.shrink(),
+          );
   }
 }
 
 class CustomIconTextButton extends CustomTextButton {
-
   @override
   const CustomIconTextButton({super.key});
 
@@ -49,8 +48,7 @@ class CustomIconTextButton extends CustomTextButton {
       clipBehavior: clip ?? Clip.none,
       style: TextButton.styleFrom(
         backgroundColor: super.backgroundColor ?? AppColors.bgColor,
-
-      ),);
+      ),
+    );
   }
-
 }
