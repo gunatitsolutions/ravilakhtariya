@@ -17,21 +17,22 @@ class CarouselSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Responsive(
-        mobile: CarouselSectionMobile(),
-        tablet: CarouselSectionMobile(),
-        desktop: CarouselSectionDesktop());
+      mobile: CarouselSectionMobile(),
+      tablet: CarouselSectionMobile(),
+      desktop: CarouselSectionDesktop(),
+    );
   }
 
-  carouseInfoWidget() {
+  Widget carouseInfoWidget() {
     return Container(
       padding: EdgeInsets.only(left: 4.w),
       decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage(
-                AppImage.raviLakhtariya,
-              ),
-              alignment: Alignment.bottomRight
-          )
+        image: DecorationImage(
+          image: AssetImage(
+            AppImage.raviLakhtariya,
+          ),
+          alignment: Alignment.bottomRight,
+        ),
       ),
       child: Stack(
         children: [
@@ -75,7 +76,7 @@ class CarouselSection extends StatelessWidget {
     );
   }
 
-  textOfTools() {
+  Widget textOfTools() {
     return AnimatedTextKit(
       animatedTexts: [
         TyperAnimatedText(
@@ -108,11 +109,12 @@ class CarouselSection extends StatelessWidget {
     );
   }
 
-  _textToolStyle() {
-    return GoogleFonts.oswald(fontSize: 14.sp, color: AppColors.colorPrimary);
-  }
+  TextStyle _textToolStyle() => GoogleFonts.oswald(
+        fontSize: 14.sp,
+        color: AppColors.colorPrimary,
+      );
 
-  _socialLinks() {
+  Widget _socialLinks() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -134,11 +136,12 @@ class CarouselSection extends StatelessWidget {
     );
   }
 
-  _socialIconWidget({required IconData iconData, required String urlLink}) {
+  Widget _socialIconWidget({
+    required IconData iconData,
+    required String urlLink,
+  }) {
     return IconButton(
-      onPressed: () {
-        LaunchCustomURL.launchURL(urlLink);
-      },
+      onPressed: () => LaunchCustomURL.launchURL(urlLink),
       icon: Icon(
         iconData,
       ),

@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:ravilakhtariya/Screens/Home/Sections/Education/Model/education_model.dart';
+import 'package:ravilakhtariya/models/education_model.dart';
 import 'package:ravilakhtariya/Screens/Home/Sections/Education/Widget/education_item.dart';
 
 enum WidgetShowType { grid, list, wrap }

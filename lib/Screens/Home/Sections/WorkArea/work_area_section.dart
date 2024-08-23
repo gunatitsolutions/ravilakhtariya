@@ -9,8 +9,9 @@ class WorkSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Responsive(
-        mobile: WorkSectionMobile(),
-        tablet: WorkSectionMobile(),
-        desktop: WorkSectionDesktop());
+      mobile: WorkSectionMobile(),
+      tablet: WorkSectionMobile(),
+      desktop: WorkSectionDesktop(),
+    );
   }
 }

@@ -5,7 +5,7 @@ import 'package:ravilakhtariya/Screens/Home/Sections/Navigation/app_navigation_b
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class AppNavigationBarDesktop extends AppNavigationBar {
-  AppNavigationBarDesktop({super.key});
+  const AppNavigationBarDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class AppNavigationBarDesktop extends AppNavigationBar {
     );
   }
 
-  navigationMenus() {
+  Expanded navigationMenus() {
     return Expanded(
       flex: 2,
       child: Row(
@@ -34,18 +34,18 @@ class AppNavigationBarDesktop extends AppNavigationBar {
         children: Menus.values
             .map(
               (e) => Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 0.5.w,
-            ),
-            child: AppMenu(
-              menu: e,
-              onTap: () {},
-            ),
-          ),
-        )
+                padding: EdgeInsets.symmetric(
+                  horizontal: 0.5.w,
+                ),
+                child: AppMenu(
+                  menu: e,
+                  onTap: () {},
+                ),
+              ),
+            )
             .toList(
-          growable: false,
-        ),
+              growable: false,
+            ),
       ),
     );
   }

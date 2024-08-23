@@ -26,11 +26,9 @@ class ContactUsSection extends StatelessWidget {
     );
   }
 
-  Widget titleWidget() {
-    return const TitleWidget(title: 'Contact Us');
-  }
+  Widget titleWidget() => const TitleWidget(title: 'Contact Us');
 
-  nameTextFieldWidget() {
+  Widget nameTextFieldWidget() {
     return TextFieldWidget(
       title: 'Name',
       textEditingController: contactUsController.nameController,
@@ -62,7 +60,7 @@ class ContactUsSection extends StatelessWidget {
     );
   }*/
 
-  subjectTextFieldWidget() {
+  Widget subjectTextFieldWidget() {
     return TextFieldWidget(
       title: 'Subject',
       textEditingController: contactUsController.subjectController,
@@ -77,7 +75,7 @@ class ContactUsSection extends StatelessWidget {
     );
   }
 
-  messageTextFieldWidget() {
+  Widget messageTextFieldWidget() {
     return TextFieldWidget(
       title: 'Message',
       textEditingController: contactUsController.messageController,
@@ -93,29 +91,29 @@ class ContactUsSection extends StatelessWidget {
     );
   }
 
-  sendMessageBtn() {
+  Widget sendMessageBtn() {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical:2.0.w),
+      padding: EdgeInsets.symmetric(vertical: 2.0.w),
       child: ElevatedButton(
-          onPressed: () {
-            if(Get.find<ContactUsController>().checkValidation()) {
-              Get.find<ContactUsController>().sendMessageBtn();
-            }
-          },
-          style: ElevatedButton.styleFrom(
-            backgroundColor: AppColors.colorPrimary,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(1.w),
-            ),
+        onPressed: () {
+          if (Get.find<ContactUsController>().checkValidation()) {
+            Get.find<ContactUsController>().sendMessageBtn();
+          }
+        },
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.colorPrimary,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(1.w),
           ),
-          child: const Text(
-            'Send',
-            style: TextStyle(
-              color: AppColors.whiteColor,
-              fontWeight: FontWeight.w600,
-            ),
-          )),
+        ),
+        child: const Text(
+          'Send',
+          style: TextStyle(
+            color: AppColors.whiteColor,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
     );
   }
-
 }

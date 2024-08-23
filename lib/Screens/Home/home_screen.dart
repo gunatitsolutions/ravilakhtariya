@@ -20,6 +20,7 @@ class HomeScreen extends StatefulWidget {
 
 class HomeScreenState extends State<HomeScreen> {
   HomeController homeController = Get.put(HomeController());
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -33,14 +34,20 @@ class HomeScreenState extends State<HomeScreen> {
             const AppNavigationBar(),
             const CarouselSection(),
             const WorkSection(),
-            SizedBox(height: 1.h,),
+            SizedBox(
+              height: 1.h,
+            ),
             const EducationSection(),
             const PortfolioSection(),
             const SkillSection(),
             const VideoSection(),
-            SizedBox(height: 2.h,),
+            SizedBox(
+              height: 2.h,
+            ),
             ContactUsSection(),
-            SizedBox(height: 2.h,),
+            SizedBox(
+              height: 2.h,
+            ),
           ],
         ),
       ),

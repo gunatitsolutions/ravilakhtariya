@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ravilakhtariya/Screens/Home/Sections/ContactUs/Model/contact_us_model.dart';
-import 'package:ravilakhtariya/Screens/Home/Sections/Education/Model/education_model.dart';
-import 'package:ravilakhtariya/Screens/Home/Sections/Portfolio/Model/portfolio_model.dart';
-import 'package:ravilakhtariya/Screens/Home/Sections/Skills/Model/skill_model.dart';
-import 'package:ravilakhtariya/Screens/Home/Sections/Videos/Model/video_model.dart';
-import 'package:ravilakhtariya/Screens/Home/Sections/WorkArea/Model/work_area_model.dart';
+import 'package:ravilakhtariya/models/contact_us_model.dart';
+import 'package:ravilakhtariya/models/education_model.dart';
+import 'package:ravilakhtariya/models/portfolio_model.dart';
+import 'package:ravilakhtariya/models/skill_model.dart';
+import 'package:ravilakhtariya/models/video_model.dart';
+import 'package:ravilakhtariya/models/work_area_model.dart';
 import 'package:ravilakhtariya/Themes/app_image.dart';
 
 class Constants {

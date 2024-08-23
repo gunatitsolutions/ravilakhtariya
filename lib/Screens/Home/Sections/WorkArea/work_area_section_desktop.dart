@@ -10,11 +10,12 @@ class WorkSectionDesktop extends WorkSection {
   @override
   Widget build(BuildContext context) {
     return SectionWidget(
-        sectionList: Constants.workAreaList,
-        widgetShowType: WidgetShowType.grid,
-        crossAxisCount: 4,
-        itemBuilder: (BuildContext context, int index) {
-          return WorkItem(workArea: Constants.workAreaList[index]);
-        });
+      sectionList: Constants.workAreaList,
+      widgetShowType: WidgetShowType.grid,
+      crossAxisCount: 4,
+      itemBuilder: (BuildContext context, int index) {
+        return WorkItem(workArea: Constants.workAreaList[index]);
+      },
+    );
   }
 }

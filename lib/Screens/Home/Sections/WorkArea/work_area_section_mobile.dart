@@ -7,15 +7,15 @@ import 'package:ravilakhtariya/Screens/Home/Sections/WorkArea/work_area_section.
 class WorkSectionMobile extends WorkSection {
   const WorkSectionMobile({super.key});
 
-
   @override
   Widget build(BuildContext context) {
-    return  SectionWidget(
-        sectionList: Constants.workAreaList,
-        widgetShowType: WidgetShowType.grid,
-        crossAxisCount: 2,
-        itemBuilder: (BuildContext context, int index) {
-          return WorkItem(workArea: Constants.workAreaList[index]);
-        });
+    return SectionWidget(
+      sectionList: Constants.workAreaList,
+      widgetShowType: WidgetShowType.grid,
+      crossAxisCount: 2,
+      itemBuilder: (BuildContext context, int index) {
+        return WorkItem(workArea: Constants.workAreaList[index]);
+      },
+    );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ravilakhtariya/Screens/Home/Sections/Videos/Model/video_model.dart';
+import 'package:ravilakhtariya/models/video_model.dart';
 import 'package:ravilakhtariya/Themes/app_color.dart';
 import 'package:ravilakhtariya/Utils/launch_custom_url.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';

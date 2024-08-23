@@ -5,7 +5,6 @@ import 'package:ravilakhtariya/Screens/Home/Sections/ContactUs/contact_us_sectio
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:get/get.dart';
 
-
 class ContactUsSectionMobile extends ContactUsSection {
   ContactUsSectionMobile({super.key});
 
@@ -16,13 +15,17 @@ class ContactUsSectionMobile extends ContactUsSection {
       child: Column(
         children: [
           titleWidget(),
-          SizedBox(height: 1.h,),
+          SizedBox(
+            height: 1.h,
+          ),
           nameTextFieldWidget(),
-         // emailTextFieldWidget(),
+          // emailTextFieldWidget(),
           subjectTextFieldWidget(),
           messageTextFieldWidget(),
           sendMessageBtn(),
-          SizedBox(height: 3.h,),
+          SizedBox(
+            height: 3.h,
+          ),
           footerContactSectionMobile(),
         ],
       ),
@@ -33,8 +36,11 @@ class ContactUsSectionMobile extends ContactUsSection {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        for(var contact in Constants.contactsList)
-          IconButton(onPressed: (){}, icon: Icon(contact.iconData))
+        for (var contact in Constants.contactsList)
+          IconButton(
+            onPressed: () {},
+            icon: Icon(contact.iconData),
+          )
       ],
     );
   }

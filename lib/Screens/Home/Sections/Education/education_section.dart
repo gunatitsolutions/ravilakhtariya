@@ -11,7 +11,10 @@ class EducationSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal:2.0.w,vertical: 2.h),
+      padding: EdgeInsets.symmetric(
+        horizontal: 2.0.w,
+        vertical: 2.h,
+      ),
       child: const Responsive(
           mobile: EducationSectionMobile(),
           tablet: EducationSectionDesktop(),

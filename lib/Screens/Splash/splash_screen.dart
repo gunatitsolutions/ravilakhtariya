@@ -11,20 +11,20 @@ class SplashScreen extends StatefulWidget {
 }
 
 class SplashScreenState extends State<SplashScreen> {
-  final SplashController _splashController = Get.find();
+  final controller = Get.put(SplashController());
 
   @override
   void initState() {
     super.initState();
-    _splashController.navigateToHome();
+    controller.navigateToHome();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ScreenWidget(
-        customWidget: const SizedBox(),
-        showProgressBar: true,
+        child: const SizedBox(),
+        state: controller.state,
       ),
     );
   }

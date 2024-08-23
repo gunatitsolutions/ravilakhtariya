@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ravilakhtariya/Screens/Home/Sections/Skills/Model/skill_model.dart';
+import 'package:ravilakhtariya/models/skill_model.dart';
 import 'package:ravilakhtariya/Themes/app_color.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 

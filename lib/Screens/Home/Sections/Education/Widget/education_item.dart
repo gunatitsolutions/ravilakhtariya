@@ -1,11 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ravilakhtariya/Screens/Home/Sections/Education/Model/education_model.dart';
+import 'package:ravilakhtariya/models/education_model.dart';
 import 'package:ravilakhtariya/Themes/app_color.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class EducationItem extends StatelessWidget {
-  const EducationItem({required this.educationModel, super.key});
+  const EducationItem({
+    required this.educationModel,
+    super.key,
+  });
 
   final EducationModel educationModel;
 
@@ -31,9 +34,9 @@ class EducationItem extends StatelessWidget {
         Text(
           educationModel.description,
           style: TextStyle(
-              color: AppColors.grayColor,
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w600
+            color: AppColors.grayColor,
+            fontSize: 15.sp,
+            fontWeight: FontWeight.w600,
           ),
           overflow: TextOverflow.clip,
           maxLines: 4,

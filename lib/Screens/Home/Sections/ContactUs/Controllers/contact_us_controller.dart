@@ -4,7 +4,6 @@ import 'package:ravilakhtariya/Utils/Components/error_snackbar_widget.dart';
 import 'package:ravilakhtariya/Utils/launch_custom_url.dart';
 
 class ContactUsController extends GetxController {
-
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController subjectController = TextEditingController();
@@ -12,13 +11,13 @@ class ContactUsController extends GetxController {
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  sendMessageBtn() {
+  void sendMessageBtn() {
     try {
       final Uri params = Uri(
         scheme: 'mailto',
         path: 'ravilakhtariya07@gmail.com',
         query:
-        'subject=${subjectController.text}&body=Hello ${nameController.text},\n${messageController.text}', //add subject and body here
+            'subject=${subjectController.text}&body=Hello ${nameController.text},\n${messageController.text}', //add subject and body here
       );
 
       LaunchCustomURL.launchURL(params.toString());
@@ -29,18 +28,12 @@ class ContactUsController extends GetxController {
     update();
   }
 
-  clearText() {
+  void clearText() {
     nameController.clear();
     emailController.clear();
     subjectController.clear();
     messageController.clear();
   }
 
-  checkValidation() {
-    if(formKey.currentState?.validate() ?? false) {
-      return true;
-    }
-    return false;
-  }
-
+  bool checkValidation() => formKey.currentState?.validate() ?? false;
 }

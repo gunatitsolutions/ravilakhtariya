@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ravilakhtariya/Screens/Home/Sections/Portfolio/Model/portfolio_model.dart';
+import 'package:ravilakhtariya/models/portfolio_model.dart';
 import 'package:ravilakhtariya/Themes/app_color.dart';
 import 'package:ravilakhtariya/Themes/app_image.dart';
 import 'package:ravilakhtariya/Utils/launch_custom_url.dart';

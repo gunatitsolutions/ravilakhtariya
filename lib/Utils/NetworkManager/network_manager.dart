@@ -4,30 +4,27 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class GetXNetworkManager extends GetxController {
-  //this variable 0 = No Internet, 1 = connected to WIFI ,2 = connected to Mobile Data.
-  RxInt count = 0.obs;
-
+  final count = 0.obs;
   int connectionType = 0;
 
-  final Rx<bool> _internetDialogOpen = false.obs;
+  final _internetDialogOpen = false.obs;
+
   bool get internetDialogOpen => _internetDialogOpen.value;
 
-
-  onChangedCountShowDialog({int? counterValue}) {
-    if(counterValue != null) {
-      count.value = counterValue ?? 0;
+  void onChangedCountShowDialog({int? counterValue}) {
+    if (counterValue != null) {
+      count.value = counterValue;
     } else {
       count.value += 1;
     }
     update();
   }
-  onChangeInternetDialogOPCL(bool onOffDialog) {
-    _internetDialogOpen.value = onOffDialog;
-    update();
-  }
+
+  void onChangeInternetDialogOPCL(bool onOffDialog) =>
+      _internetDialogOpen.value = onOffDialog;
 
   //Instance of Flutter Connectivity
-  final Connectivity _connectivity = Connectivity();
+  final _connectivity = Connectivity();
 
   //Stream to keep listening to network change state
   late StreamSubscription _streamSubscription;
@@ -45,9 +42,7 @@ class GetXNetworkManager extends GetxController {
     var _connectivityResult;
     try {
       _connectivityResult = await (_connectivity.checkConnectivity());
-    } on PlatformException catch (_) {
-
-    }
+    } on PlatformException catch (_) {}
     return _updateState(_connectivityResult);
   }
 
@@ -75,8 +70,5 @@ class GetXNetworkManager extends GetxController {
   }
 
   @override
-  void onClose() {
-    //stop listening to network state when app is closed
-    _streamSubscription.cancel();
-  }
+  void onClose() => _streamSubscription.cancel();
 }

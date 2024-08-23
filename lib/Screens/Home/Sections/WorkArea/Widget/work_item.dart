@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ravilakhtariya/Screens/Home/Sections/WorkArea/Model/work_area_model.dart';
+import 'package:ravilakhtariya/models/work_area_model.dart';
 import 'package:ravilakhtariya/Themes/app_color.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
