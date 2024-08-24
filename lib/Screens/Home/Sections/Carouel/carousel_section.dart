@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ravilakhtariya/Constants/constants.dart';
 import 'package:ravilakhtariya/Screens/Home/Sections/Carouel/carousel_section_desktop.dart';
@@ -25,7 +26,9 @@ class CarouselSection extends StatelessWidget {
 
   Widget carouseInfoWidget() {
     return Container(
-      padding: EdgeInsets.only(left: 4.w),
+      padding: EdgeInsets.only(
+        left: 4.w,
+      ),
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
@@ -80,27 +83,27 @@ class CarouselSection extends StatelessWidget {
     return AnimatedTextKit(
       animatedTexts: [
         TyperAnimatedText(
-          ' IOS Developer/ Flutter Developer',
+          'iOSDeveloperFlutterDeveloper'.tr,
           speed: const Duration(milliseconds: 50),
           textStyle: _textToolStyle(),
         ),
         TyperAnimatedText(
-          ' Graphic Designer',
+          'graphicDesigner'.tr,
           speed: const Duration(milliseconds: 50),
           textStyle: _textToolStyle(),
         ),
         TyperAnimatedText(
-          ' Photographer',
+          'photographer'.tr,
           speed: const Duration(milliseconds: 50),
           textStyle: _textToolStyle(),
         ),
         TyperAnimatedText(
-          ' Story/Drama Writer',
+          'storyDramaWriter'.tr,
           speed: const Duration(milliseconds: 50),
           textStyle: _textToolStyle(),
         ),
         TyperAnimatedText(
-          ' A friend.',
+          'aFriend'.tr,
           speed: const Duration(milliseconds: 50),
           textStyle: _textToolStyle(),
         ),
@@ -119,19 +122,29 @@ class CarouselSection extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         _socialIconWidget(
-            iconData: FontAwesomeIcons.linkedin, urlLink: SocialLinks.linkedin),
+          iconData: FontAwesomeIcons.linkedin,
+          urlLink: SocialLinks.linkedin,
+        ),
         _socialIconWidget(
-            iconData: FontAwesomeIcons.instagram,
-            urlLink: SocialLinks.instagram),
+          iconData: FontAwesomeIcons.instagram,
+          urlLink: SocialLinks.instagram,
+        ),
         _socialIconWidget(
-            iconData: FontAwesomeIcons.twitter, urlLink: SocialLinks.twitter),
+          iconData: FontAwesomeIcons.twitter,
+          urlLink: SocialLinks.twitter,
+        ),
         _socialIconWidget(
-            iconData: FontAwesomeIcons.youtube, urlLink: SocialLinks.youtube),
+          iconData: FontAwesomeIcons.youtube,
+          urlLink: SocialLinks.youtube,
+        ),
         _socialIconWidget(
-            iconData: FontAwesomeIcons.pen, urlLink: SocialLinks.pratilipi),
+          iconData: FontAwesomeIcons.pen,
+          urlLink: SocialLinks.pratilipi,
+        ),
         _socialIconWidget(
-            iconData: FontAwesomeIcons.googlePlay,
-            urlLink: SocialLinks.playStore),
+          iconData: FontAwesomeIcons.googlePlay,
+          urlLink: SocialLinks.playStore,
+        ),
       ],
     );
   }

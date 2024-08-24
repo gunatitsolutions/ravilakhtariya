@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ravilakhtariya/models/portfolio_model.dart';
 import 'package:ravilakhtariya/Themes/app_color.dart';
@@ -11,18 +12,21 @@ class PortfolioItem extends StatelessWidget {
   final bool? showImageLeading;
   final String projectType;
 
-  const PortfolioItem(
-      {super.key,
-        required this.portfolioModel,
-        this.showImageLeading,
-        required this.projectType});
+  const PortfolioItem({
+    super.key,
+    required this.portfolioModel,
+    this.showImageLeading,
+    required this.projectType,
+  });
 
   final PortfolioModel portfolioModel;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 2.0.w),
+      padding: EdgeInsets.symmetric(
+        vertical: 2.0.w,
+      ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -89,7 +93,10 @@ class PortfolioItem extends StatelessWidget {
   Widget _title() {
     return Text(
       portfolioModel.title,
-      style: GoogleFonts.oswald(fontWeight: FontWeight.w600, fontSize: 17.sp),
+      style: GoogleFonts.oswald(
+        fontWeight: FontWeight.w600,
+        fontSize: 17.sp,
+      ),
       maxLines: 2,
     );
   }
@@ -110,21 +117,27 @@ class PortfolioItem extends StatelessWidget {
     return const SizedBox.shrink();
   }
 
-  iconPaddingBtn({IconData? iconData, String? image}) {
+  Widget iconPaddingBtn({
+    IconData? iconData,
+    String? image,
+  }) {
     return Padding(
-        padding: EdgeInsets.only(right: 1.0.w),
-        child: iconData != null
-            ? Icon(
-                iconData,
-                size: 15.sp,
-              )
-            : image != null
-                ? Image(
-                    image: AssetImage(image ?? ''),
-                    width: 15.sp,
-                    height: 15.sp,
-                  )
-                : const SizedBox.shrink());
+      padding: EdgeInsets.only(
+        right: 1.0.w,
+      ),
+      child: iconData != null
+          ? Icon(
+              iconData,
+              size: 15.sp,
+            )
+          : image != null
+              ? Image(
+                  image: AssetImage(image),
+                  width: 15.sp,
+                  height: 15.sp,
+                )
+              : const SizedBox.shrink(),
+    );
   }
 
   Widget _description() {
@@ -143,14 +156,15 @@ class PortfolioItem extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(0.5.w),
       child: ElevatedButton(
-        onPressed: () {
-          LaunchCustomURL.launchURL(portfolioModel.link);
-        },
+        onPressed: () => LaunchCustomURL.launchURL(portfolioModel.link),
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent,
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(1.w),
-              side: const BorderSide(color: Colors.white)),
+            borderRadius: BorderRadius.circular(1.w),
+            side: const BorderSide(
+              color: AppColors.whiteColor,
+            ),
+          ),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -158,7 +172,7 @@ class PortfolioItem extends StatelessWidget {
           children: [
             _urlLink(),
             Text(
-              'EXPLORE',
+              'explore'.tr,
               style: GoogleFonts.oswald(
                 fontSize: 13.sp,
                 fontWeight: FontWeight.w700,
@@ -170,5 +184,4 @@ class PortfolioItem extends StatelessWidget {
       ),
     );
   }
-
 }

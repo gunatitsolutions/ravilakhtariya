@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
 class Responsive extends StatelessWidget {
-  final Widget mobile;
-  final Widget tablet;
-  final Widget desktop;
+  final Widget? mobile;
+  final Widget? tablet;
+  final Widget? desktop;
+
   const Responsive({
-    Key? key,
-    required this.mobile,
-    required this.tablet,
-    required this.desktop,
-  }) : super(key: key);
+    super.key,
+    this.mobile,
+    this.tablet,
+    this.desktop,
+  });
 
   // screen sizes
   static bool isMobile(BuildContext context) =>
@@ -17,7 +18,7 @@ class Responsive extends StatelessWidget {
 
   static bool isTablet(BuildContext context) =>
       MediaQuery.of(context).size.width < 1000 &&
-          MediaQuery.of(context).size.width >= 600;
+      MediaQuery.of(context).size.width >= 600;
 
   static bool isDesktop(BuildContext context) =>
       MediaQuery.of(context).size.width >= 1000;
@@ -25,13 +26,13 @@ class Responsive extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-      builder: (context, constraints) {
+      builder: (_, constraints) {
         if (constraints.maxWidth >= 1000) {
-          return desktop;
+          return desktop ?? tablet ?? mobile ?? const SizedBox.shrink();
         } else if (constraints.maxWidth >= 600) {
-          return tablet;
+          return tablet ?? desktop ?? mobile ?? const SizedBox.shrink();
         } else {
-          return mobile;
+          return mobile ?? tablet ?? desktop ?? const SizedBox.shrink();
         }
       },
     );

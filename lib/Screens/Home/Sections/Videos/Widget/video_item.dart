@@ -5,19 +5,23 @@ import 'package:ravilakhtariya/Utils/launch_custom_url.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class VideoItem extends StatelessWidget {
-  const VideoItem({super.key, required this.videoModel});
+  const VideoItem({
+    super.key,
+    required this.videoModel,
+  });
 
   final VideoModel videoModel;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        LaunchCustomURL.launchURL(videoModel.videoLink);
-      },
+      onTap: () => LaunchCustomURL.launchURL(videoModel.videoLink),
       child: Card(
         color: AppColors.whiteColor,
-        margin: EdgeInsets.symmetric(vertical: 1.0.h,horizontal: 1.0.h),
+        margin: EdgeInsets.symmetric(
+          vertical: 1.0.h,
+          horizontal: 1.0.h,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -32,10 +36,14 @@ class VideoItem extends StatelessWidget {
     );
   }
 
-  detailWidget() {
+  Widget detailWidget() {
     return Padding(
       padding: EdgeInsets.only(
-          left: 0.5.w, right: 0.5.w, top: 0.2.h, bottom: 1.h),
+        left: 0.5.w,
+        right: 0.5.w,
+        top: 0.2.h,
+        bottom: 1.h,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -45,9 +53,10 @@ class VideoItem extends StatelessWidget {
           Text(
             videoModel.title,
             style: TextStyle(
-                fontSize: 13.sp,
-                fontWeight: FontWeight.w700,
-                color: AppColors.blackColor),
+              fontSize: 13.sp,
+              fontWeight: FontWeight.w700,
+              color: AppColors.blackColor,
+            ),
             maxLines: 3,
           ),
           SizedBox(
@@ -56,9 +65,10 @@ class VideoItem extends StatelessWidget {
           Text(
             videoModel.shortDescription,
             style: TextStyle(
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w500,
-                color: AppColors.grayColor),
+              fontSize: 10.sp,
+              fontWeight: FontWeight.w500,
+              color: AppColors.grayColor,
+            ),
             maxLines: 5,
             overflow: TextOverflow.clip,
           )

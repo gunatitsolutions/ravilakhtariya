@@ -11,7 +11,7 @@ class SectionWidget<T> extends StatelessWidget {
     super.key,
     this.crossAxisCount,
     this.widgetShowType,
-    this.aspectRatio
+    this.aspectRatio,
   });
 
   final WidgetShowType? widgetShowType;
@@ -31,7 +31,9 @@ class SectionWidget<T> extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: sectionList.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: crossAxisCount ?? 2, childAspectRatio: aspectRatio ?? 2 / 1),
+        crossAxisCount: crossAxisCount ?? 2,
+        childAspectRatio: aspectRatio ?? 2 / 1,
+      ),
       itemBuilder: itemBuilder,
     );
   }

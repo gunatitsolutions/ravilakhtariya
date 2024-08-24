@@ -13,8 +13,10 @@ class WorkSectionDesktop extends WorkSection {
       sectionList: Constants.workAreaList,
       widgetShowType: WidgetShowType.grid,
       crossAxisCount: 4,
-      itemBuilder: (BuildContext context, int index) {
-        return WorkItem(workArea: Constants.workAreaList[index]);
+      itemBuilder: (context, index) {
+        return WorkItem(
+          workArea: Constants.workAreaList[index],
+        );
       },
     );
   }

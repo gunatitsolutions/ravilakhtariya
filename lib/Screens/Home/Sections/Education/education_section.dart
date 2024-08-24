@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
 import 'package:ravilakhtariya/Screens/Home/Sections/Education/education_section_desktop.dart';
 import 'package:ravilakhtariya/Screens/Home/Sections/Education/education_section_mobile.dart';
 import 'package:ravilakhtariya/Utils/Components/title_widget.dart';
@@ -16,13 +17,12 @@ class EducationSection extends StatelessWidget {
         vertical: 2.h,
       ),
       child: const Responsive(
-          mobile: EducationSectionMobile(),
-          tablet: EducationSectionDesktop(),
-          desktop: EducationSectionDesktop()),
+        mobile: EducationSectionMobile(),
+        tablet: EducationSectionDesktop(),
+        desktop: EducationSectionDesktop(),
+      ),
     );
   }
 
-  Widget titleWidget() {
-    return const TitleWidget(title: 'Education');
-  }
+  Widget titleWidget() => TitleWidget(title: 'education'.tr);
 }

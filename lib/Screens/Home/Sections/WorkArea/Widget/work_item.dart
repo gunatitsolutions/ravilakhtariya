@@ -5,14 +5,19 @@ import 'package:ravilakhtariya/Themes/app_color.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class WorkItem extends StatelessWidget {
-  const WorkItem({required this.workArea, super.key});
+  const WorkItem({
+    required this.workArea,
+    super.key,
+  });
 
   final WorkAreaModel workArea;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal:2.0.w),
+      padding: EdgeInsets.symmetric(
+        horizontal: 2.0.w,
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

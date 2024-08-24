@@ -17,7 +17,9 @@ class EducationSectionDesktop extends EducationSection {
           widgetShowType: WidgetShowType.grid,
           crossAxisCount: 3,
           itemBuilder: (BuildContext context, int index) {
-            return EducationItem(educationModel: Constants.educationList[index]);
+            return EducationItem(
+              educationModel: Constants.educationList[index],
+            );
           },
         ),
       ],

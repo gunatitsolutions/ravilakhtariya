@@ -14,17 +14,11 @@ class PortfolioSectionDesktop extends PortfolioSection {
         titleWidget(),
         SectionWidget(
           sectionList: Constants.portfolios,
-          itemBuilder: (BuildContext context, int index) {
-            if (index % 2 == 0) {
-              return PortfolioItem(
-                projectType: Constants.portfolios[index].projectType,
-                portfolioModel: Constants.portfolios[index].portfolioList.first,
-                showImageLeading: true,
-              );
-            }
+          itemBuilder: (context, index) {
             return PortfolioItem(
               projectType: Constants.portfolios[index].projectType,
               portfolioModel: Constants.portfolios[index].portfolioList.first,
+              showImageLeading: index % 2 == 0,
             );
           },
         ),

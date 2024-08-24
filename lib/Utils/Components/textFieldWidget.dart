@@ -10,53 +10,54 @@ import 'package:ravilakhtariya/Utils/SharedPreferences/shared_get_storage.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class TextFieldWidget extends StatelessWidget {
-  String? title;
-  String? initialValue;
-  bool? showHint;
-  void Function(String?)? changedValue;
-  String? Function(String?)? validator;
-  TextInputType? textInputType;
-  TextInputAction? textInputAction;
-  TextCapitalization? textCapitalization;
-  bool? obSecureText;
-  List<TextInputFormatter>? inputFormatter;
-  bool? showTitle;
-  bool? enabled;
-  int? maxLength;
-  int? maxLines;
-  bool? readOnly;
-  void Function()? onTapTextField;
-  TextFieldType? textFieldType;
-  TextEditingController? textEditingController;
-  Widget? prefix;
-  Widget? suffix;
-  bool? enableBorder;
-  Widget? customTitleWidget;
+  final String? title;
+  final String? initialValue;
+  final bool? showHint;
+  final ValueChanged<String?>? changedValue;
+  final String? Function(String?)? validator;
+  final TextInputType? textInputType;
+  final TextInputAction? textInputAction;
+  final TextCapitalization? textCapitalization;
+  final bool? obSecureText;
+  final List<TextInputFormatter>? inputFormatter;
+  final bool? showTitle;
+  final bool? enabled;
+  final int? maxLength;
+  final int? maxLines;
+  final bool? readOnly;
+  final void Function()? onTapTextField;
+  final TextFieldType? textFieldType;
+  final TextEditingController? textEditingController;
+  final Widget? prefix;
+  final Widget? suffix;
+  final bool? enableBorder;
+  final Widget? customTitleWidget;
 
-  TextFieldWidget(
-      {super.key,
-      this.title,
-      this.initialValue,
-      this.showHint,
-      this.changedValue,
-      this.onTapTextField,
-      this.validator,
-      this.textInputType = TextInputType.text,
-      this.textInputAction = TextInputAction.done,
-      this.maxLines,
-      this.maxLength,
-      this.readOnly,
-      this.textEditingController,
-      this.textCapitalization = TextCapitalization.words,
-      this.obSecureText = false,
-      this.inputFormatter,
-      this.showTitle = false,
-      this.enabled = true,
-      this.textFieldType = TextFieldType.text,
-      this.prefix,
-      this.suffix,
-      this.enableBorder = false,
-      this.customTitleWidget});
+  TextFieldWidget({
+    super.key,
+    this.title,
+    this.initialValue,
+    this.showHint,
+    this.changedValue,
+    this.onTapTextField,
+    this.validator,
+    this.textInputType = TextInputType.text,
+    this.textInputAction = TextInputAction.done,
+    this.maxLines,
+    this.maxLength,
+    this.readOnly,
+    this.textEditingController,
+    this.textCapitalization = TextCapitalization.words,
+    this.obSecureText = false,
+    this.inputFormatter,
+    this.showTitle = false,
+    this.enabled = true,
+    this.textFieldType = TextFieldType.text,
+    this.prefix,
+    this.suffix,
+    this.enableBorder = false,
+    this.customTitleWidget,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +75,7 @@ class TextFieldWidget extends StatelessWidget {
     );
   }
 
-  customWidgetWithTextField(BuildContext context) {
+  Widget customWidgetWithTextField(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -85,7 +86,7 @@ class TextFieldWidget extends StatelessWidget {
     );
   }
 
-  customTitleWithTextField(BuildContext context) {
+  Widget customTitleWithTextField(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -100,7 +101,7 @@ class TextFieldWidget extends StatelessWidget {
     );
   }
 
-  textFieldWidgets(BuildContext context) {
+  Widget textFieldWidgets(BuildContext context) {
     return TextFormField(
         showCursor: true,
         key: key,
@@ -163,7 +164,7 @@ class TextFieldWidget extends StatelessWidget {
     }
   }
 
-  getKeyBoardType() {
+  TextInputType getKeyBoardType() {
     if (textInputType == null && textFieldType == TextFieldType.phone ||
         textFieldType == TextFieldType.zip) {
       return TextInputType.phone;
@@ -171,10 +172,7 @@ class TextFieldWidget extends StatelessWidget {
     return TextInputType.text;
   }
 
-
-  bool isDarkMode() {
-    return SharedPrefs.readBoolValue(PrefConstants.darkMode);
-  }
+  bool isDarkMode() => SharedPrefs.readBoolValue(PrefConstants.darkMode);
 }
 
 enum TextFieldType { email, phone, password, amount, text, zip }

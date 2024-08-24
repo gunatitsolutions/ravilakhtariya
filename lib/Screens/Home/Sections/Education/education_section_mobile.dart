@@ -16,7 +16,7 @@ class EducationSectionMobile extends EducationSection {
           sectionList: Constants.educationList,
           widgetShowType: WidgetShowType.grid,
           crossAxisCount: 2,
-          itemBuilder: (BuildContext context, int index) {
+          itemBuilder: (context, index) {
             return EducationItem(
               educationModel: Constants.educationList[index],
             );

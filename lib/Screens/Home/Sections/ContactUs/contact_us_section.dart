@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ravilakhtariya/Constants/constants.dart';
 import 'package:ravilakhtariya/Screens/Home/Sections/ContactUs/Controllers/contact_us_controller.dart';
 import 'package:ravilakhtariya/Screens/Home/Sections/ContactUs/contact_us_section_desktop.dart';
 import 'package:ravilakhtariya/Screens/Home/Sections/ContactUs/contact_us_section_mobile.dart';
@@ -13,24 +12,25 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 class ContactUsSection extends StatelessWidget {
   ContactUsSection({super.key});
 
-  ContactUsController contactUsController = Get.put(ContactUsController());
+  final contactUsController = Get.put(ContactUsController());
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(2.0.w),
       child: Responsive(
-          mobile: ContactUsSectionMobile(),
-          tablet: ContactUsSectionDesktop(),
-          desktop: ContactUsSectionDesktop()),
+        mobile: ContactUsSectionMobile(),
+        tablet: ContactUsSectionDesktop(),
+        desktop: ContactUsSectionDesktop(),
+      ),
     );
   }
 
-  Widget titleWidget() => const TitleWidget(title: 'Contact Us');
+  Widget titleWidget() => TitleWidget(title: 'contactUs'.tr);
 
   Widget nameTextFieldWidget() {
     return TextFieldWidget(
-      title: 'Name',
+      title: 'name'.tr,
       textEditingController: contactUsController.nameController,
       showHint: true,
       enableBorder: true,
@@ -62,7 +62,7 @@ class ContactUsSection extends StatelessWidget {
 
   Widget subjectTextFieldWidget() {
     return TextFieldWidget(
-      title: 'Subject',
+      title: 'subject'.tr,
       textEditingController: contactUsController.subjectController,
       showHint: true,
       enableBorder: true,

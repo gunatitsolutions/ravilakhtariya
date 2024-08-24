@@ -6,7 +6,9 @@ import 'package:ravilakhtariya/Screens/Home/Sections/Videos/video_section.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class VideoSectionDesktop extends VideoSection {
-  const VideoSectionDesktop({super.key});
+  const VideoSectionDesktop({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +19,12 @@ class VideoSectionDesktop extends VideoSection {
           sectionList: Constants.videoList,
           crossAxisCount: 3,
           widgetShowType: WidgetShowType.grid,
-          aspectRatio: 1/0.9,
-          itemBuilder: (BuildContext context, int index) {
+          aspectRatio: 1 / 0.9,
+          itemBuilder: (context, index) {
             return Padding(
               padding: EdgeInsets.all(2.0.w),
               child: VideoItem(
-                videoModel:
-                Constants.videoList[index],
+                videoModel: Constants.videoList[index],
               ),
             );
           },

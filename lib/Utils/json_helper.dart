@@ -3,37 +3,37 @@ import 'package:flutter/services.dart';
 
 class JsonHelper {
   static Future<Map<String, dynamic>> readJson(String jsonFile) async {
-    var response = await rootBundle.loadString(jsonFile);
+    final response = await rootBundle.loadString(jsonFile);
     final data = await json.decode(response);
     return data;
   }
 
   static Future writeJson(dynamic value) async {
-    var response = const JsonEncoder().convert(value);
+    final response = const JsonEncoder().convert(value);
     return json.decode(response);
   }
 
   static dynamic mapObjectToJson(jsonData) {
-    var data = json.encode(jsonData);
+    final data = json.encode(jsonData);
     return jsonDecode(data);
   }
 
   void writeJsonString(String key, dynamic value) async {
     // Initialize the local _filePath
     //final _filePath = await _localFile;
-    Map<String, dynamic> json = {};
+    final json = <String, dynamic>{};
     String jsonString;
     //1. Create _newJson<Map> from input<TextField>
     Map<String, dynamic> newJson = {key: value};
-   // print('1.(_writeJson) _newJson: $newJson');
+    // print('1.(_writeJson) _newJson: $newJson');
 
     //2. Update _json by adding _newJson<Map> -> _json<Map>
     json.addAll(newJson);
-   // print('2.(_writeJson) _json(updated): $json');
+    // print('2.(_writeJson) _json(updated): $json');
 
     //3. Convert _json ->_jsonString
     jsonString = jsonEncode(json);
-  //  print('3.(_writeJson) _jsonString: $jsonString\n - \n');
+    //  print('3.(_writeJson) _jsonString: $jsonString\n - \n');
 
     // //4. Write _jsonString to the _filePath
     // _filePath.writeAsString(_jsonString);

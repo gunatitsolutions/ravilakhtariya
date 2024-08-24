@@ -46,67 +46,60 @@ final class TimeAgo {
   }
 
   static String getDateWithFormat(DateTime dates) {
-    var formatter = DateFormat('dd-MM-yyyy h:mma');
-    String formatted = formatter.format(dates);
+    final formatter = DateFormat('dd-MM-yyyy h:mma');
+    final formatted = formatter.format(dates);
     return formatted;
   }
 
   static String getJoinedDateFormat(DateTime dates) {
-    var formatter = DateFormat('dd MMM yyyy');
-    String formatted = formatter.format(dates);
+    final formatter = DateFormat('dd MMM yyyy');
+    final formatted = formatter.format(dates);
     return formatted;
   }
 
   static String? getOnlyDateFormat(DateTime date,
       {String? format = 'MM-dd-yyyy hh:mm'}) {
-    var formatter = DateFormat(format);
+    final formatter = DateFormat(format);
     return formatter.format(date); //DateTime.parse(formatter.format(date));
   }
 
   static DateTime? getOnlyDateForm(DateTime date,
       {String? format = 'yyyy-MMM-dd'}) {
-    var formatter = DateFormat(format);
+    final formatter = DateFormat(format);
     return DateTime.parse(formatter.format(date));
   }
 
   static String? getOnlyTImeFormat(DateTime date,
       {String? format = 'hh:mm aaa'}) {
-    var formatter = DateFormat(format);
+    final formatter = DateFormat(format);
     return formatter.format(date); //DateTime.parse(formatter.format(date));
   }
 
   static bool getPostDate(String firstDate) {
-    var currentDtes = DateTime.now();
-    var formatter = DateFormat('dd MMM');
+    final currentDtes = DateTime.now();
+    final formatter = DateFormat('dd MMM');
 
     // var date1 = DateTime.parse(formatter.format(currentDtes));
-    var inputDate = DateTime.parse(currentDtes.toString());
+    final inputDate = DateTime.parse(currentDtes.toString());
 
-    var date1 = formatter.format(inputDate);
+    final date1 = formatter.format(inputDate);
     //var date2 = DateFormat('dd MMM').parse(firstDate);
 
     //var date2 = DateTime.parse(formatter.format(firstDate));
-    if (date1 == firstDate) {
-      return true;
-    }
-    return false;
+    return date1 == firstDate;
   }
 
-  static String? getDateFromMiliseconds(String? miliseconds) {
-    var timestamp = int.tryParse(miliseconds ?? '000'); // timestamp in seconds
+  static String? getDateFromMilliseconds(String? milliseconds) {
+    var timestamp = int.tryParse(milliseconds ?? '000'); // timestamp in seconds
     final DateTime date =
         DateTime.fromMillisecondsSinceEpoch((timestamp ?? 000));
-    var dateformat = DateFormat('yyyy-MM-dd hh:mm:ss').format(date).toString();
-    return dateformat;
+    return DateFormat('yyyy-MM-dd hh:mm:ss').format(date).toString();
   }
 
-  static int getMiliseconds() {
-    return DateTime.now().millisecondsSinceEpoch;
-  }
+  static int getMilliseconds() => DateTime.now().millisecondsSinceEpoch;
 
-  static int getMiliSecondsFromDate(DateTime? date) {
-    return date?.microsecondsSinceEpoch ?? 0;
-  }
+  static int getMilliSecondsFromDate(DateTime? date) =>
+      date?.microsecondsSinceEpoch ?? 0;
 
   static String getMonthAndYear({int? increase}) {
     var newDate = DateTime.now();
@@ -115,14 +108,14 @@ final class TimeAgo {
     return dateString;
   }
 
-  static List<String> getAssesmentYear() {
-    List<String> array = [];
-    var newDate = DateTime.now();
+  static List<String> getAssessmentYear() {
+    final array = <String>[];
+    final newDate = DateTime.now();
     //(i - 2) its show  upper year for example current year 2023-24 then its show 2024-25 this row too.
     for (int i = 15; i > 0; i--) {
-      var firstYear =
+      final firstYear =
           DateFormat('yyyy').format(DateTime(newDate.year - (i - 2), 1, 1));
-      var secondYear =
+      final secondYear =
           DateFormat('yy').format(DateTime((newDate.year - (i - 2)) + 1, 1, 1));
       array.add('$firstYear-$secondYear');
     }
@@ -130,33 +123,33 @@ final class TimeAgo {
   }
 
   static String getFinancialStartMonthAndYear({int? increase}) {
-    var newDate = DateTime.now();
-    var newDates = DateTime(newDate.year, (increase ?? 0), 1);
-    var dateString = DateFormat('MMM yyyy').format(newDates);
+    final newDate = DateTime.now();
+    final newDates = DateTime(newDate.year, (increase ?? 0), 1);
+    final dateString = DateFormat('MMM yyyy').format(newDates);
     return dateString;
   }
 
   static String getYear(String dateStr) {
     DateTime date1 = DateFormat('MMM yyyy').parse(dateStr);
-    var newDate = DateTime(date1.year);
+    final newDate = DateTime(date1.year);
     return DateFormat('yyyy').format(newDate);
   }
 
   static String getMonth(String dateStr) {
     DateTime date1 = DateFormat('MMM yyyy').parse(dateStr);
-    var newDate = DateTime(date1.year, date1.month, 1);
+    final newDate = DateTime(date1.year, date1.month, 1);
     return DateFormat('MMM').format(newDate);
   }
 
   static String getMonthFromNumber(int monthNumber, {required String dateStr}) {
     DateTime date1 = DateFormat('MMM yyyy').parse(dateStr);
-    var newDate = DateTime(date1.year, monthNumber, 1);
+    final newDate = DateTime(date1.year, monthNumber, 1);
     return DateFormat('MMM').format(newDate);
   }
 
   static bool compareDates(String date1Str, String date2Str) {
-    DateTime date1 = DateFormat('MMM yyyy').parse(date1Str);
-    DateTime date2 = DateFormat('MMM yyyy').parse(date2Str);
+    final date1 = DateFormat('MMM yyyy').parse(date1Str);
+    final date2 = DateFormat('MMM yyyy').parse(date2Str);
     if (date1.compareTo(date2) < 0) {
       return false;
     } else if (date1.compareTo(date2) == 0) {
@@ -167,20 +160,19 @@ final class TimeAgo {
   }
 
   static int getMonthInNumber(String dateStr) {
-    DateTime date = DateFormat('MMM yyyy').parse(dateStr);
+    final date = DateFormat('MMM yyyy').parse(dateStr);
     return date.month;
   }
 
   static DateTime getCoinDate(String dateStr) {
-    DateTime date = DateFormat('yyyy-MM-dd hh:mm:ss').parse(dateStr);
+    final date = DateFormat('yyyy-MM-dd hh:mm:ss').parse(dateStr);
     return date;
   }
 
   static bool isDateChanged(DateTime previousDate, DateTime currentDate) {
-    String formattedPreviousDate = DateFormat('yyyy-MM-dd').format(previousDate);
-    String formattedCurrentDate = DateFormat('yyyy-MM-dd').format(currentDate);
+    final formattedPreviousDate = DateFormat('yyyy-MM-dd').format(previousDate);
+    final formattedCurrentDate = DateFormat('yyyy-MM-dd').format(currentDate);
 
     return formattedPreviousDate != formattedCurrentDate;
   }
-
 }

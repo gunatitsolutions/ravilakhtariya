@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
 import 'package:ravilakhtariya/Screens/Home/Sections/Portfolio/portfolio_section_desktop.dart';
 import 'package:ravilakhtariya/Screens/Home/Sections/Portfolio/portfolio_section_mobile.dart';
 import 'package:ravilakhtariya/Utils/Components/title_widget.dart';
@@ -20,7 +21,5 @@ class PortfolioSection extends StatelessWidget {
     );
   }
 
-  Widget titleWidget() {
-    return const TitleWidget(title: 'Portfolio');
-  }
+  Widget titleWidget() => TitleWidget(title: 'portfolio'.tr);
 }

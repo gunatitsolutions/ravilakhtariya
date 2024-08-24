@@ -32,7 +32,7 @@ class ContactUsSectionMobile extends ContactUsSection {
     );
   }
 
-  footerContactSectionMobile() {
+ Widget footerContactSectionMobile() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [

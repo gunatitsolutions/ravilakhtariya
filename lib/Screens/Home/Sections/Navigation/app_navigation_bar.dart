@@ -15,9 +15,9 @@ class AppNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Responsive(
-      mobile: const AppNavigationBarMobile(),
-      tablet: const AppNavigationBarMobile(),
+    return const Responsive(
+      mobile: AppNavigationBarMobile(),
+      tablet: AppNavigationBarMobile(),
       desktop: AppNavigationBarDesktop(),
     );
   }
@@ -49,7 +49,7 @@ class AppNavigationBar extends StatelessWidget {
           ),
         ),
         child: Text(
-          'Download CV',
+          'downloadCV'.tr,
           style: TextStyle(
             color: AppColors.whiteColor,
             fontSize: 12.sp,
@@ -85,7 +85,7 @@ class AppNavigationBar extends StatelessWidget {
     );
   }
 
-  webMenuWidget() {
+  List<Widget> webMenuWidget() {
     return Menus.values
         .map(
           (e) => Padding(

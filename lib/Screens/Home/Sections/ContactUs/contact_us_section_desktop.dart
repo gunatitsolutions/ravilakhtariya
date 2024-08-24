@@ -25,7 +25,10 @@ class ContactUsSectionDesktop extends ContactUsSection {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                constraints: BoxConstraints(minWidth: 40.w, maxWidth: 50.w),
+                constraints: BoxConstraints(
+                  minWidth: 40.w,
+                  maxWidth: 50.w,
+                ),
                 alignment: Alignment.centerLeft,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +40,10 @@ class ContactUsSectionDesktop extends ContactUsSection {
                   ],
                 ),
               ),
-              Flexible(flex: 1,child: footerContactSectionMobile()),
+              Flexible(
+                flex: 1,
+                child: footerContactSectionMobile(),
+              ),
             ],
           )
         ],
@@ -49,15 +55,21 @@ class ContactUsSectionDesktop extends ContactUsSection {
     return ConstrainedBox(
       constraints: BoxConstraints(
         minWidth: 40.w,
-        maxWidth: 45.w
+        maxWidth: 45.w,
       ),
       child: SectionWidget(
         sectionList: Constants.contactsList,
-        itemBuilder: (BuildContext context, int index) {
+        itemBuilder: (context, index) {
           return ListTile(
-            onTap: (){},
+            onTap: () {},
             leading: Icon(Constants.contactsList[index].iconData),
-            title: Text(Constants.contactsList[index].contactDetail,style: TextStyle(fontSize: 14.sp,color: AppColors.whiteColor),),
+            title: Text(
+              Constants.contactsList[index].contactDetail,
+              style: TextStyle(
+                fontSize: 14.sp,
+                color: AppColors.whiteColor,
+              ),
+            ),
           );
         },
       ),

@@ -4,7 +4,10 @@ import 'package:ravilakhtariya/Themes/app_color.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class SkillItem extends StatelessWidget {
-  const SkillItem({required this.skillModel, super.key});
+  const SkillItem({
+    required this.skillModel,
+    super.key,
+  });
 
   final SkillModel skillModel;
 
