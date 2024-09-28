@@ -9,13 +9,13 @@ import 'package:ravilakhtariya/Utils/launch_custom_url.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class PortfolioItem extends StatelessWidget {
-  final bool? showImageLeading;
+  final bool showImageLeading;
   final String projectType;
 
   const PortfolioItem({
     super.key,
     required this.portfolioModel,
-    this.showImageLeading,
+    this.showImageLeading = false,
     required this.projectType,
   });
 
@@ -30,9 +30,7 @@ class PortfolioItem extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          (showImageLeading ?? false)
-              ? _imageWidget()
-              : const SizedBox.shrink(),
+          showImageLeading ? _imageWidget() : const SizedBox.shrink(),
           Expanded(
               flex: 2,
               child: Column(
@@ -53,9 +51,7 @@ class PortfolioItem extends StatelessWidget {
                   exploreButton()
                 ],
               )),
-          !(showImageLeading ?? false)
-              ? _imageWidget()
-              : const SizedBox.shrink(),
+          !showImageLeading ? _imageWidget() : const SizedBox.shrink(),
         ],
       ),
     );
