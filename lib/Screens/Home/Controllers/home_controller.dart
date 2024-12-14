@@ -13,15 +13,6 @@ class HomeController extends GetxController {
   void downloadResumes() async {
     if (kIsWeb) {
       await FileDownloader.downloadFile();
-      /*await FileSaver.instance
-          .saveAs(
-              name: 'RaviLakhtariyaResume',
-              filePath: 'assets/ravilakhtariya.pdf',
-              ext: 'pdf',
-              mimeType: MimeType.pdf)
-          .then((value) {
-        print(value);
-      });*/
     }
   }
 }
